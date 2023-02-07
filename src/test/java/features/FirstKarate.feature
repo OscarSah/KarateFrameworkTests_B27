@@ -36,7 +36,7 @@ Feature: welcome to karate
     * print employee.lastName
     * print employee.salary
 
-  @wip
+
   Scenario: array json objects
       * def spartans =
       """
