@@ -10,7 +10,6 @@ Feature: welcome to karate
     * print 2+2
     # ----> this one is doing arithmetic operation
 
-  @wip
   Scenario: variables
     * def name = 'Mike'
     # single or double quotation does not matter
@@ -18,3 +17,22 @@ Feature: welcome to karate
     # + sign concat without white space
     * def age = 20
     * print name,"is",age,"years old"
+
+  Scenario: json variables
+    * def student = {'name':'Oscar','owes_tuition':false}
+    * print student
+    * print student.name
+    * print student.owes_tuition
+
+  @wip
+  Scenario: json variables second way
+    * def employee =
+    """
+    {
+    "firstName":"Steven",
+    "lastName":"King",
+    "salary":3000
+    }
+    """
+    * print employee.lastName
+    * print employee.salary
