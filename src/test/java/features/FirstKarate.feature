@@ -24,10 +24,9 @@ Feature: welcome to karate
     * print student.name
     * print student.owes_tuition
 
-  @wip
   Scenario: json variables second way
     * def employee =
-    """
+  """
     {
     "firstName":"Steven",
     "lastName":"King",
@@ -36,3 +35,26 @@ Feature: welcome to karate
     """
     * print employee.lastName
     * print employee.salary
+
+  @wip
+  Scenario: array json objects
+      * def spartans =
+      """
+      [
+       {
+        "id": 103,
+        "name": "Sergei",
+        "gender": "Male",
+        "phone": 12345667890
+        },
+       {
+        "id": 104,
+        "name": "issaa",
+        "gender": "Male",
+        "phone": 9293331111
+        }
+      ]
+      """
+      * print spartans
+      * print spartans[0].name
+      * print spartans[1].phone
