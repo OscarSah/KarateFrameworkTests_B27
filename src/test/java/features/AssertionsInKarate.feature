@@ -32,7 +32,7 @@ Feature: using match keyword
     * match employee.salary == '#number'
     * match employee.active == '#boolean'
     * match employee.lastName == '#notpresent'
-  @wip
+
   Scenario: contains matching
     * def spartans =
       """
@@ -54,5 +54,9 @@ Feature: using match keyword
     * def length = spartans.length
     * match length == 2
     * match spartans contains {"id": 103, "name": "Sergei", "gender": "Male", "phone": 12345667890 }
+    * def data = { foo: [1, 2, 3] }
+    * match data.foo contains any [9, 2, 8]
+    * def items = { foo: [{ bar: 1, baz: 'a' }, { bar: 2, baz: 'b' }, { bar: 3, baz: 'c' }]}
+    * match each items.foo == { bar: '#number', baz: '#string' }
 
     
