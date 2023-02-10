@@ -21,3 +21,13 @@ Feature: BookIt Feature Tests
       And header Authorization = 'Bearer '+accessToken
       When method GET
       Then match response == expectedStudent
+
+
+  Scenario: get Campuses info and verify
+    Given url baseUrl
+    And path 'api/campuses'
+    And header Authorization = 'Bearer '+accessToken
+    When method GET
+    # when we are reading from a regular file we don't need call function
+    And def expectedCampuses = read('classpath:data/campuses.json')
+    Then match response == expectedCampuses
