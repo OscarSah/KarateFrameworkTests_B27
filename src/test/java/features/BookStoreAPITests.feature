@@ -9,7 +9,7 @@ Feature: Testing the functionality of Book Store API
     And match header Content-Length == '4514'
     And match header Date == '#present'
 
-  @wip
+
   Scenario: GET all books info and verify body information
     Given url 'https://demoqa.com/BookStore/v1/Books'
     When method get
