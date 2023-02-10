@@ -41,7 +41,7 @@ Feature: Testing Different Spartans API End Points
     And match response.success == 'A Spartan is Born!'
     And match response.data.name == newSpartan.name
 
-  @wip
+
   Scenario: Delete the Spartan after we post the spartan
        # point that file with Java.type syntax and assign it to a variable
       * def SDG = Java.type('utilities.SpartanDataGenerator')
